@@ -49,12 +49,15 @@ class _HomePageState extends State<HomePage> {
            Row(
              mainAxisAlignment: MainAxisAlignment.center,
              children: List.generate(text1.length, (index) {
-               return Container(
+               return AnimatedContainer(
+                   duration: Duration(seconds: 1),
+                 curve: Curves.linear,
                  margin: EdgeInsets.all(2),
                  height: 6,
-                 width: 6,
+                 width: indexAnimation==index ? 9: 6,
                  decoration: BoxDecoration(
-                   shape: BoxShape.circle,
+                   //shape: BoxShape.circle,
+                   borderRadius: BorderRadius.circular(5),
                    color: indexAnimation==index ? Colors.blue: Colors.grey.shade300,
                  ),
                );
